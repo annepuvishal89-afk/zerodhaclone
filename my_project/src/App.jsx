@@ -1,60 +1,28 @@
-/*import './App.css'
-function App() {
-  return (
-    <>
-    <section style={{textAlign:"center"}}>
-    <header style={{display:"flex",justifyContent:"space-evenly"}}>
-    <img height={70} width={100} src="https://zerodha.com/static/images/logo.svg" alt="Logo" />
-     <nav style={{display:"flex",gap:"20px",alignItems:"center"}}>
-     <a href="">Sign Up</a>
-     <a href="">About</a>
-     <a href="">Products</a >
-     <a href="">pricing</a>
-     <a href="">Support</a>
-     </nav>
-     </header>  
-
-    <img src="https://zerodha.com/static/images/landing.svg" alt="" />
-    <h2>Invest in everything</h2>
-    <p>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</p>
-    <button id="btn">SignUp</button>
-   </section>
-    </>
-  )
-}
-
-export default App*/
 import './App.css'
+import Header from './Header'
+import Products from './Products.jsx'
+import Register from './Register.jsx'
+import Login from './Login.jsx'
+import { Routes, Route } from 'react-router-dom'
+import Home from './home.jsx'
+import About from './About.jsx'
 
 function App() {
   return (
     <>
       <section style={{ textAlign: "center" }}>
-        <header style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <img height={70} width={100} src="https://zerodha.com/static/images/logo.svg"alt="Logo"/>
-
-          <nav style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <a href="">Sign Up</a>
-            <a href="">About</a>
-            <a href="">Products</a>
-            <a href="">Pricing</a>
-            <a href="">Support</a>
-          </nav>
-        </header>
-
-        <img src="https://zerodha.com/static/images/landing.svg" alt="Investing illustration"/>
-
-        <h2>Invest in everything</h2>
-
-        <p>
-          Online platform to invest in stocks, derivatives, mutual funds, ETFs,
-          bonds, and more.
-        </p>
-
-        <button id="btn">Sign Up</button>
+        <Header />
       </section>
+      
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />    
+      </Routes>
     </>
   )
 }
 
-export default App
+export default App;
